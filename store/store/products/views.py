@@ -2,11 +2,17 @@ from django.shortcuts import render
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import Product
 
-
 #PRODUCTS LIST 
 class ProductsView(View):
     template_name = 'products.html'
 
+    def get(self, request, *args, **kwargs):
+        products = Product.objects.all()
+        return render(request, self.template_name , {"products" : products})
+#PRODUCT SEARCH LIST
+class ProductSearchView(View):
+    template_name = 'products.html'
+    
     def get(self, request, *args, **kwargs):
         products = Product.objects.all()
         return render(request, self.template_name , {"products" : products})
@@ -19,9 +25,9 @@ class ProductCategoryView(View):
         products = get_list_or_404(Product , category=category)
         return render(request, self.template_name , {"products" : products})
 
-#PRODUCT DETAIL
+#PRODUCT DETAIL 
 class ProductsDetailView(View):
-    template_name = 'product-detail.html'
+    template_name = 'product.html'
 
     def get(self, request, id , *args, **kwargs):
         product = get_object_or_404(Product , id)

@@ -38,5 +38,3 @@ class Image(models.Model):
     def get_absolute_url(self):
         return reverse("_detail", kwargs={"pk": self.pk})
 
-class Sale(models.Model):
-    Product = models.OneToOneField(Product, verbose_name=_(""), on_delete=models.CASCADE)
