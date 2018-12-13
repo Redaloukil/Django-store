@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ProductsConfig(AppConfig):
-    name = 'store.products'
+    name = 'products'
     verbose_name = "Products"
