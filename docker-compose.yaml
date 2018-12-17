@@ -13,7 +13,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./ecommerce:/app
+      - ./store:/app
     environment:
       - POSTGRES_USER=ecommerce
       - USE_DOCKER=yes

@@ -7,4 +7,4 @@ set -o xtrace
 
 
 rm -f './celerybeat.pid'
-celery -A boatsbnb.taskapp beat -l INFO
+celery -A store.taskapp beat -l INFO

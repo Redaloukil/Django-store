@@ -6,4 +6,4 @@ set -o nounset
 set -o xtrace
 
 
-celery -A boatsbnb.taskapp worker -l INFO
+celery -A store.taskapp worker -l INFO
