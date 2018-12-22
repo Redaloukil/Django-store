@@ -89,13 +89,10 @@ MIGRATION_MODULES = {
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'store.users.auth_backends.AuthenticationBackend'
 ]
 
-ACCOUNT_FORMS = {
-    'login': 'allauth.account.forms.LoginForm',
-    'signup': 'allauth.account.forms.SignupForm',
-    
-}
+
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = 'users.User'
@@ -237,6 +234,8 @@ ADMINS = [
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
+
+
 
 
 # django-allauth
