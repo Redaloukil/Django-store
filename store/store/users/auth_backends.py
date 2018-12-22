@@ -14,8 +14,3 @@ class AuthenticationBackend(ModelBackend):
                 return user
         return None
 
-from store.users.auth_backends import AuthenticationBackend
-
-authentification = AuthenticationBackend()
-
-authentification.authenticate(username="0552092560" , password="helloworld")
